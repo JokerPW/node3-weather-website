@@ -12,7 +12,10 @@ const forecast = (lat, lon, callback) => {
         }else {
             callback(undefined, {
                 temperature: body.currently.temperature,
-                probability: body.currently.precipProbability
+                probability: body.currently.precipProbability,
+                summary: body.daily.data[0].summary,
+                temp_high: body.daily.data[0].temperatureHigh,
+                temp_low: body.daily.data[0].temperatureLow
             })
         }
     })
